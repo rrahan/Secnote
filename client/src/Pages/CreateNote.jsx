@@ -135,7 +135,7 @@ export default function CreateNote() {
                   />
                   <Button
                     onClick={copyToClipboard}
-                    className="rounded-l-none h-[43px]"
+                    className="rounded-l-none h-[43px] cursor-pointer"
                   >
                     <Copy className="w-4 h-4" />
                   </Button>
