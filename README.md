@@ -10,7 +10,6 @@
 
 Secnote lets you send confidential messages through one-time, self-destructing links. Notes are encrypted in the browser using NaCl cryptography -- the server never sees your plaintext. Once it's read, it's gone.
 
-🔗 **Live at [secnote.co](https://secnote.co)**
 
 ## Features
 
