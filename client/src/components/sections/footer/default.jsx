@@ -36,7 +36,7 @@ export default function FooterSection2({
     },
   ],
 
-  copyright = "© 2025 Secnote. All rights reserved",
+  copyright = "© 2026 Secnote. All rights reserved",
 
   policies = [
     { text: "About", href: "/about" },
