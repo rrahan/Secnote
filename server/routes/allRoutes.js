@@ -42,11 +42,17 @@ router.get("/api/note/:noteid", async (req, res) => {
   const { noteid } = req.params;
 
   try {
-    const notes = await note.findOne({ noteid });
+    const notes = await note.findOneAndDelete({ noteid });
 
     if (!notes) {
       return res.status(404).json({ exists: false, message: "Note not found" });
     }
+
+    await Counter.findByIdAndUpdate(
+      "notes",
+      { $inc: { deletedCount: 1 } },
+      { upsert: true, new: true }
+    );
 
     res.status(200).json({
       exists: true,

@@ -112,22 +112,7 @@ export default function ViewNote() {
       setDecryptedContent("🔒 Decryption failed. Wrong key or corrupted data.");
     }
 
-    const deleteNote = async () => {
-      try {
-        const response = await axios.delete(
-          `${server_url}/delete/${id}`
-        );
-        if (response.data.exists) {
-          // console.log('Note deleted:', response.data);
-        } else {
-          // console.log('Note does not exist');
-        }
-      } catch (error) {
-        console.error("Error deleting  note:", error);
-      }
-    };
-
-    deleteNote();
+    // Note is already atomically deleted on fetch (server-side findOneAndDelete)
 
     // if (noteData.encrypted) {
     //   content = decryptZeroWidth(content)
